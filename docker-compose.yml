@@ -3,6 +3,8 @@ services:
     build: .
     container_name: morrisontech-site
     restart: unless-stopped
+    ports:
+      - "8881:80"
     networks:
       - proxy
     labels:
