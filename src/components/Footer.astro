@@ -1,0 +1,50 @@
+---
+const navLinks = [
+  { label: 'Services', href: '/services' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<footer class="bg-brand-dark text-gray-400">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Logo + tagline -->
+      <div>
+        <p class="text-white font-bold text-lg mb-2">Morrisontech</p>
+        <p class="text-sm">Professional websites for Australian businesses.</p>
+      </div>
+
+      <!-- Nav -->
+      <div>
+        <p class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Navigation</p>
+        <ul class="space-y-2">
+          {navLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-white transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contact</p>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="mailto:hello@morrisontech.com.au" class="hover:text-white transition-colors">
+              hello@morrisontech.com.au
+            </a>
+          </li>
+          <li>Australia</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-brand-mid mt-10 pt-6 text-sm text-center">
+      © {new Date().getFullYear()} Morrisontech. All rights reserved.
+    </div>
+  </div>
+</footer>

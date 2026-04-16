@@ -1,0 +1,46 @@
+---
+const navLinks = [
+  { label: 'Services', href: '/services' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark border-b border-brand-mid">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="text-white font-bold text-xl tracking-tight hover:text-brand-accent transition-colors">
+        Morrisontech
+      </a>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href="/contact"
+          class="bg-brand-accent hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-md transition-colors"
+        >
+          Get a Quote
+        </a>
+      </nav>
+
+      <!-- Mobile: just the CTA button -->
+      <div class="md:hidden">
+        <a
+          href="/contact"
+          class="bg-brand-accent text-white text-sm font-semibold px-3 py-2 rounded-md"
+        >
+          Get a Quote
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
