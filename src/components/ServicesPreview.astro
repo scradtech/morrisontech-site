@@ -1,0 +1,46 @@
+---
+const services = [
+  {
+    icon: '🖥️',
+    title: 'Website Design & Development',
+    description: 'Custom Astro and Next.js sites built to convert visitors into clients.',
+  },
+  {
+    icon: '🤖',
+    title: 'AI-Powered Development',
+    description: 'Faster builds and lower cost — using cutting-edge AI development tooling.',
+  },
+  {
+    icon: '🚀',
+    title: 'Hosting & Maintenance',
+    description: 'Docker-based deployment with ongoing support and fast updates.',
+  },
+];
+---
+
+<section class="bg-brand-light py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-brand-dark mb-3">What We Do</h2>
+      <p class="text-gray-600 max-w-xl mx-auto">
+        End-to-end website services for Australian businesses of every size.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {services.map(service => (
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col">
+          <div class="text-4xl mb-4">{service.icon}</div>
+          <h3 class="text-xl font-semibold text-brand-dark mb-3">{service.title}</h3>
+          <p class="text-gray-600 text-sm flex-1">{service.description}</p>
+          <a
+            href="/services"
+            class="mt-6 text-brand-accent font-semibold text-sm hover:underline inline-flex items-center gap-1"
+          >
+            Learn more →
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
