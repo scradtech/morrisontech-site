@@ -52,14 +52,14 @@ const services = [
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-20">
     {services.map((service, i) => (
-      <div class={`grid grid-cols-1 md:grid-cols-2 gap-12 items-start ${i % 2 === 1 ? 'md:[direction:rtl]' : ''}`}>
-        <div class="md:[direction:ltr]">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div class={i % 2 === 1 ? 'md:order-last' : ''}>
           <h2 class="text-3xl font-bold text-brand-dark mb-4">{service.title}</h2>
           {service.description.split('\n\n').map(para => (
             <p class="text-gray-600 leading-relaxed mb-4">{para.trim()}</p>
           ))}
         </div>
-        <div class="bg-brand-light rounded-xl p-8 md:[direction:ltr]">
+        <div class="bg-brand-light rounded-xl p-8">
           <p class="text-sm font-semibold text-brand-dark uppercase tracking-wider mb-4">What's included</p>
           <ul class="space-y-3">
             {service.includes.map(item => (
