@@ -1,0 +1,77 @@
+---
+---
+
+<form
+  action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+  method="POST"
+  class="space-y-6"
+>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+        Name <span class="text-red-500" aria-hidden="true">*</span>
+        <span class="sr-only">(required)</span>
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="w-full border border-gray-300 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent"
+        placeholder="Jane Smith"
+        autocomplete="name"
+      />
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+        Email <span class="text-red-500" aria-hidden="true">*</span>
+        <span class="sr-only">(required)</span>
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="w-full border border-gray-300 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent"
+        placeholder="jane@example.com.au"
+        autocomplete="email"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+      Phone <span class="text-gray-400 font-normal">(optional)</span>
+    </label>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      class="w-full border border-gray-300 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent"
+      placeholder="04xx xxx xxx"
+      autocomplete="tel"
+    />
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+      Message <span class="text-red-500" aria-hidden="true">*</span>
+      <span class="sr-only">(required)</span>
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows="5"
+      class="w-full border border-gray-300 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent resize-none"
+      placeholder="Tell us about your project..."
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="w-full bg-brand-accent hover:opacity-90 text-white font-semibold py-3 rounded-md transition-opacity"
+  >
+    Send Message
+  </button>
+</form>
