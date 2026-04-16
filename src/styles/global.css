@@ -1,3 +1,7 @@
+:root {
+  --color-brand-accent: #2d6cdf;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
