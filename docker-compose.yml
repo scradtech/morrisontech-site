@@ -1,0 +1,14 @@
+services:
+  morrisontech-site:
+    build: .
+    container_name: morrisontech-site
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - "VIRTUAL_HOST=morrisontech.com.au"
+      - "VIRTUAL_PORT=80"
+
+networks:
+  proxy:
+    external: true
