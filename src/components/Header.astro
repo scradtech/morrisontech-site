@@ -14,7 +14,7 @@ const navLinks = [
         Morrisontech
       </a>
 
-      <!-- Nav -->
+      <!-- Desktop nav -->
       <nav class="hidden md:flex items-center gap-8">
         {navLinks.map(link => (
           <a
@@ -26,19 +26,27 @@ const navLinks = [
         ))}
         <a
           href="/contact"
-          class="bg-brand-accent hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-md transition-colors"
+          class="bg-brand-accent hover:opacity-90 text-white text-sm font-semibold px-4 py-2 rounded-md transition-opacity"
         >
           Get a Quote
         </a>
       </nav>
 
-      <!-- Mobile: just the CTA button -->
-      <div class="md:hidden">
+      <!-- Mobile nav -->
+      <div class="md:hidden flex items-center gap-4">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
         <a
           href="/contact"
-          class="bg-brand-accent text-white text-sm font-semibold px-3 py-2 rounded-md"
+          class="bg-brand-accent hover:opacity-90 text-white text-sm font-semibold px-3 py-2 rounded-md transition-opacity"
         >
-          Get a Quote
+          Quote
         </a>
       </div>
     </div>
