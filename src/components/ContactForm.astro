@@ -1,8 +1,11 @@
 ---
 ---
 
+<div id="form-status" class="hidden rounded-md px-4 py-3 text-sm font-medium" role="alert" aria-live="polite"></div>
+
 <form
-  action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+  id="contact-form"
+  action="https://formspree.io/f/xbdqgorg"
   method="POST"
   class="space-y-6"
 >
@@ -72,9 +75,62 @@
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" aria-hidden="true" />
 
   <button
+    id="submit-btn"
     type="submit"
-    class="w-full bg-brand-accent hover:opacity-90 text-white font-semibold py-3 rounded-md transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
+    class="w-full bg-brand-accent hover:opacity-90 text-white font-semibold py-3 rounded-md transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
   >
     Send Message
   </button>
 </form>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+    var btn = document.getElementById('submit-btn');
+
+    function showStatus(message, isSuccess) {
+      status.textContent = message;
+      status.classList.remove('hidden', 'bg-green-50', 'text-green-800', 'bg-red-50', 'text-red-800');
+      if (isSuccess) {
+        status.classList.add('bg-green-50', 'text-green-800');
+      } else {
+        status.classList.add('bg-red-50', 'text-red-800');
+      }
+      status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      })
+        .then(function (response) {
+          if (response.ok) {
+            showStatus('Thanks for your message! We\'ll be in touch within one business day.', true);
+            form.reset();
+          } else {
+            return response.json().then(function (data) {
+              var msg =
+                data.errors
+                  ? data.errors.map(function (e) { return e.message; }).join(', ')
+                  : 'Something went wrong. Please try again or email us directly.';
+              showStatus(msg, false);
+            });
+          }
+        })
+        .catch(function () {
+          showStatus('Unable to send your message. Please check your connection and try again.', false);
+        })
+        .finally(function () {
+          btn.disabled = false;
+          btn.textContent = 'Send Message';
+        });
+    });
+  })();
+</script>
