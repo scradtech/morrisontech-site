@@ -5,7 +5,7 @@ import CTABanner from '../components/CTABanner.astro';
 const services = [
   {
     title: 'Website Design & Development',
-    description: `Every Morrisontech site is built from scratch to suit your business — no templates, no shortcuts. We use Astro for fast, content-focused business sites and Next.js when you need a web application, e-commerce, or user accounts. All styling is done with Tailwind CSS for pixel-perfect, responsive results on every screen size.`,
+    description: `Every Morrisontech site is built from scratch to suit your business — no templates, no shortcuts. We take the time to understand your brand, your customers, and your goals, then build a site that works hard for you.\n\nWhether you need a simple landing page or a full multi-page business site, we deliver a polished, professional result that makes a strong first impression.`,
     includes: [
       'Custom design tailored to your brand',
       'Mobile-first, responsive layout',
@@ -15,23 +15,25 @@ const services = [
     ],
   },
   {
-    title: 'AI-Powered Development',
-    description: `Morrisontech uses the latest AI development tools — including Claude Code — throughout every build. This isn't about cutting corners. It's about moving faster and delivering more value for your budget. You get a professionally built site in less time, at a lower cost, with the same attention to quality.\n\nWe're transparent about our tooling because we see it as a competitive advantage for you, not something to hide.`,
+    title: 'E-Commerce & Online Stores',
+    description: `Ready to sell online? We build fully functional online stores that make it easy for customers to browse, choose, and buy — and easy for you to manage your products, orders, and payments.\n\nWe handle everything from product pages and checkout to payment gateway integration, so you can focus on running your business rather than worrying about the tech.`,
     includes: [
-      'Faster project turnaround than traditional agencies',
-      'Lower development cost passed on to the client',
-      'Same quality standards — AI assists, humans review everything',
-      'Modern stack that is easy to maintain and extend',
+      'Product listings and category pages',
+      'Secure checkout and payment gateway integration',
+      'Order management and customer accounts',
+      'Mobile-optimised shopping experience',
+      'Ongoing support as your store grows',
     ],
   },
   {
     title: 'Hosting & Maintenance',
-    description: `Once your site is built, we handle the infrastructure. Each site runs in its own Docker container on a Linux server, routed through Nginx Proxy Manager. This keeps your site isolated, stable, and easy to update.\n\nWe handle ongoing maintenance — content updates, dependency updates, and quick-turnaround changes — so you can focus on running your business.`,
+    description: `Once your site is live, we keep it running. We handle all the infrastructure so you never have to worry about downtime, updates, or technical issues.\n\nOur hosting is reliable, Australian-based, and includes ongoing maintenance — content updates, fixes, and improvements — with fast turnaround and no lock-in contracts.`,
     includes: [
-      'Docker container deployment per site',
-      'Automated deployment pipeline',
-      'Australian-based support',
-      'Fast turnaround on content updates and changes',
+      'Reliable Australian-based hosting',
+      'Regular updates and security patches',
+      'Fast turnaround on content changes',
+      'No lock-in contracts',
+      'Direct support — you deal with us, not a helpdesk',
     ],
   },
 ];
@@ -39,7 +41,7 @@ const services = [
 
 <Layout
   title="Services — Morrisontech"
-  description="Website design, AI-powered development, and hosting for Australian businesses."
+  description="Professional website design, e-commerce, and hosting for Australian businesses."
 >
   <div class="bg-brand-dark pt-32 pb-16 text-center">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,6 +74,48 @@ const services = [
         </div>
       </div>
     ))}
+  </div>
+
+  <!-- Pricing -->
+  <div class="bg-brand-light py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-brand-dark mb-3">Simple, Fixed Pricing</h2>
+        <p class="text-gray-600 max-w-xl mx-auto">No surprises. No hidden fees. Just straightforward pricing for professional results.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div class="bg-white rounded-xl p-8 shadow-sm border-2 border-brand-accent">
+          <div class="inline-block bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Launch Special</div>
+          <p class="text-5xl font-bold text-brand-dark mb-2">$399</p>
+          <p class="text-gray-500 text-sm mb-6">5-page professional website</p>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-3"><span class="text-brand-accent font-bold" aria-hidden="true">✓</span>Up to 5 pages</li>
+            <li class="flex items-start gap-3"><span class="text-brand-accent font-bold" aria-hidden="true">✓</span>Custom design</li>
+            <li class="flex items-start gap-3"><span class="text-brand-accent font-bold" aria-hidden="true">✓</span>Mobile responsive</li>
+            <li class="flex items-start gap-3"><span class="text-brand-accent font-bold" aria-hidden="true">✓</span>Contact form</li>
+            <li class="flex items-start gap-3"><span class="text-brand-accent font-bold" aria-hidden="true">✓</span>Basic SEO setup</li>
+          </ul>
+          <a href="/contact" class="mt-8 block text-center bg-brand-accent hover:opacity-90 text-white font-semibold py-3 rounded-md transition-opacity">
+            Get Started
+          </a>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="inline-block bg-brand-light text-brand-dark text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Hosting</div>
+          <p class="text-5xl font-bold text-brand-dark mb-2">$15<span class="text-2xl text-gray-400 font-normal">/mo</span></p>
+          <p class="text-gray-500 text-sm mb-6">Reliable hosting & maintenance</p>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-3"><span class="text-brand-accent font-bold" aria-hidden="true">✓</span>Australian-based hosting</li>
+            <li class="flex items-start gap-3"><span class="text-brand-accent font-bold" aria-hidden="true">✓</span>SSL certificate included</li>
+            <li class="flex items-start gap-3"><span class="text-brand-accent font-bold" aria-hidden="true">✓</span>Security & software updates</li>
+            <li class="flex items-start gap-3"><span class="text-brand-accent font-bold" aria-hidden="true">✓</span>Fast content updates</li>
+            <li class="flex items-start gap-3"><span class="text-brand-accent font-bold" aria-hidden="true">✓</span>No lock-in contracts</li>
+          </ul>
+          <a href="/contact" class="mt-8 block text-center border-2 border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white font-semibold py-3 rounded-md transition-colors">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <CTABanner />
